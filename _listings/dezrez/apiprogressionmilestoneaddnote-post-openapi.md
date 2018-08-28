@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Dezrez
 x-complete: 0
 info:
-  title: Dezrez Remove an individual payment from batch export
+  title: Dezrez Add a note to an individual progression milestone
   version: 1.0.0
-  description: Remove an individual payment from batch export.
+  description: Add a note to an individual progression milestone.
 host: api.dezrez.com
 basePath: /
 schemes:
@@ -39,6 +39,30 @@ paths:
       - From
       - Batch
       - Export
+  /api/progression/milestone/addnote:
+    post:
+      summary: Add a note to an individual progression milestone
+      description: Add a note to an individual progression milestone.
+      operationId: Progression_AddMilestoneNoteBynoteDataContract
+      x-api-path-slug: apiprogressionmilestoneaddnote-post
+      parameters:
+      - in: body
+        name: noteDataContract
+        description: Notes to be added
+        schema:
+          $ref: '#/definitions/holder'
+      - in: header
+        name: Rezi-Api-Version
+        description: Specifies which version of the API to call
+      responses:
+        200:
+          description: OK
+      tags:
+      - Note
+      - To
+      - Individual
+      - Progression
+      - Milestone
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0

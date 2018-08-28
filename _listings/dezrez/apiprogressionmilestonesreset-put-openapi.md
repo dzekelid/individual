@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Dezrez
 x-complete: 0
 info:
-  title: Dezrez Get the details of an individual application referencing result
+  title: Dezrez Add a note to an individual progression milestone
   version: 1.0.0
-  description: Get the details of an individual application referencing result.
+  description: Add a note to an individual progression milestone.
 host: api.dezrez.com
 basePath: /
 schemes:
@@ -88,50 +88,6 @@ paths:
       - Individual
       - Progression
       - Milestone
-  /api/tenantreferncing/submitapplication/{caseId}:
-    put:
-      summary: Submits an individual referencing application for processing
-      description: Submits an individual referencing application for processing.
-      operationId: TenantReferencing_SubmitApplicationForReferencingBycaseId
-      x-api-path-slug: apitenantreferncingsubmitapplicationcaseid-put
-      parameters:
-      - in: path
-        name: caseId
-        description: The id of the case to submit the application for
-      - in: header
-        name: Rezi-Api-Version
-        description: Specifies which version of the API to call
-      responses:
-        200:
-          description: OK
-      tags:
-      - Submits
-      - Individual
-      - Referencing
-      - Applicationprocessing
-  /api/tenantreferncing/application/{applicationId}/referencingresult:
-    get:
-      summary: Get the details of an individual application referencing result
-      description: Get the details of an individual application referencing result.
-      operationId: TenantReferencing_GetApplicationStatusByapplicationId
-      x-api-path-slug: apitenantreferncingapplicationapplicationidreferencingresult-get
-      parameters:
-      - in: path
-        name: applicationId
-        description: The id of the application to retrieve results for
-      - in: header
-        name: Rezi-Api-Version
-        description: Specifies which version of the API to call
-      responses:
-        200:
-          description: OK
-      tags:
-      - Details
-      - Of
-      - Individual
-      - Application
-      - Referencing
-      - Result
 x-streamrank:
   polling_total_time_average: 0
   polling_size_download_average: 0
